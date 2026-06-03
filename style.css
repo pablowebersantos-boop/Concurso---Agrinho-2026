@@ -1,4 +1,4 @@
-/* Cores Vibrantes e Estilo Geral */
+/* Definição de Cores Vibrantes */
 :root {
     --verde-lima: #39FF14;
     --verde-escuro: #004B23;
@@ -6,8 +6,10 @@
     --laranja-alerta: #FF6B00;
     --branco: #FFFFFF;
     --cinza-claro: #f4f4f4;
+    --texto-escuro: #333333;
 }
 
+/* Configuração Geral da Página */
 * {
     margin: 0;
     padding: 0;
@@ -16,22 +18,22 @@
 }
 
 body {
-    background-color: var(--verde-escuro);
-    color: var(--branco);
+    background-color: #ffffff; /* Fundo base branco para evitar tela verde vazia */
+    color: var(--texto-escuro);
     overflow-x: hidden;
 }
 
-/* Seção Principal (Hero) com Degradê Forte */
+/* Seção Principal (Onde fica o fundo verde oficial) */
 .hero {
     min-height: 100vh;
     background: linear-gradient(135deg, #004B23 0%, #38b000 100%);
+    color: var(--branco);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 20px;
-    position: relative;
+    padding: 40px 20px;
 }
 
 .hero h1 {
@@ -41,7 +43,6 @@ body {
     margin-bottom: 20px;
     text-transform: uppercase;
     letter-spacing: 2px;
-    animation: balanco 3s ease-in-out infinite alternate;
 }
 
 .hero p {
@@ -51,7 +52,7 @@ body {
     line-height: 1.6;
 }
 
-/* Container do Quiz Interativo */
+/* Caixa do Quiz Interativo */
 .quiz-container {
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
@@ -66,3 +67,99 @@ body {
 .quiz-pergunta {
     font-size: 1.4rem;
     font-weight: bold;
+    margin-bottom: 20px;
+    color: var(--amarelo-sol);
+}
+
+.opcoes-container {
+    display: grid;
+    gap: 15px;
+}
+
+.btn-opcao {
+    background-color: var(--branco);
+    color: var(--verde-escuro);
+    border: none;
+    padding: 15px 20px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: left;
+    width: 100%;
+}
+
+.btn-opcao:hover {
+    background-color: var(--amarelo-sol);
+    color: var(--verde-escuro);
+    transform: scale(1.02);
+}
+
+/* Classes que o JavaScript ativa nas respostas */
+.correta {
+    background-color: var(--verde-lima) !important;
+    color: var(--verde-escuro) !important;
+}
+
+.errada {
+    background-color: var(--laranja-alerta) !important;
+    color: var(--branco) !important;
+}
+
+#mensagem-feedback {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    min-height: 30px;
+}
+
+/* Seção Inferior de Conteúdo do Projeto */
+.conteudo-projeto {
+    padding: 80px 20px;
+    background-color: var(--branco);
+    color: var(--texto-escuro);
+    text-align: center;
+}
+
+.conteudo-projeto h2 {
+    font-size: 2.5rem;
+    color: var(--verde-escuro);
+    margin-bottom: 20px;
+}
+
+.subtitulo {
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+    font-size: 1.2rem;
+    color: #666;
+}
+
+.cards-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.card {
+    background: var(--cinza-claro);
+    border-left: 5px solid var(--laranja-alerta);
+    padding: 25px;
+    border-radius: 8px;
+    width: 300px;
+    text-align: left;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.card h3 {
+    color: var(--verde-escuro);
+    margin-bottom: 10px;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .hero h1 { font-size: 2.5rem; }
+    .hero p { font-size: 1.1rem; }
+}
