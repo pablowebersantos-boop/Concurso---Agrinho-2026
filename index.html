@@ -1,75 +1,46 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
-    <meta charset="utf-8">
-    <title>Agrinho 2026</title>
-    <style>
-        body {
-            background-color: #004B23;
-            color: #FFFFFF;
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 40px 20px;
-            margin: 0;
-        }
-        .container {
-            background-color: rgba(255, 255, 255, 0.1);
-            border: 4px solid #39FF14;
-            border-radius: 15px;
-            padding: 30px;
-            max-width: 550px;
-            margin: 30px auto;
-        }
-        h1 {
-            color: #FFD60A;
-            font-size: 40px;
-            margin-bottom: 10px;
-        }
-        p {
-            font-size: 18px;
-            line-height: 1.5;
-        }
-        .pergunta {
-            font-size: 22px;
-            color: #FFD60A;
-            font-weight: bold;
-            margin-bottom: 20px;
-        }
-        .botao {
-            display: block;
-            width: 100%;
-            background-color: #FFFFFF;
-            color: #004B23;
-            padding: 15px;
-            margin: 12px 0;
-            border: none;
-            border-radius: 8px;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-        .botao:hover {
-            background-color: #FF6B00;
-            color: #FFFFFF;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agrinho 2026 - Conectando o Futuro</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <h1>AGRINHO 2026</h1>
-    <p>O futuro do campo e da sustentabilidade começa aqui.</p>
+    <section class="hero">
+        <h1>Agrinho 2026</h1>
+        <p>O futuro do campo e da sustentabilidade começa com a tecnologia. Avaliador, você está pronto para testar seu conhecimento?</p>
 
-    <div class="container">
-        <div class="pergunta">Desafio do Avaliador: Como a tecnologia ajuda o pequeno produtor?</div>
-        
-        <button class="botao" onclick="alert('🎉 Correto! Otimizando recursos e gerando sustentabilidade.')">
-            A) Economizando água e insumos com sensores inteligentes.
-        </button>
-        
-        <button class="botao" onclick="alert('❌ Tente novamente! O foco é usar a tecnologia a favor do meio ambiente.')">
-            B) Afastando a tecnologia e voltando ao passado do campo.
-        </button>
-    </div>
+        <div class="quiz-container">
+            <div class="quiz-pergunta">
+                Qual é o maior desafio para a agricultura do futuro que nosso projeto busca resolver?
+            </div>
+            <div class="opcoes-container">
+                <button class="btn-opcao" onclick="verificarResposta(0, this)">Aumentar a produção gastando mais recursos naturais.</button>
+                <button class="btn-opcao" onclick="verificarResposta(1, this)">Produzir de forma sustentável utilizando tecnologia eficiente.</button>
+                <button class="btn-opcao" onclick="verificarResposta(2, this)">Isolar o campo das inovações digitais das grandes cidades.</button>
+                <button class="btn-opcao" onclick="verificarResposta(3, this)">Substituir completamente a agricultura familiar por robôs.</button>
+            </div>
+            <div id="mensagem-feedback"></div>
+        </div>
+    </section>
 
-</body>
-</html>
+    <section class="conteudo-projeto">
+        <h2>Nosso Projeto: Inovação no Agro</h2>
+        <p class="subtitulo">Conheça os pilares do nosso trabalho focado no desenvolvimento do ecossistema agrícola.</p>
+
+        <div class="cards-grid">
+            <div class="card">
+                <h3>🌱 Sustentabilidade</h3>
+                <p>Práticas que preservam o meio ambiente e garantem o futuro das próximas gerações.</p>
+            </div>
+            <div class="card">
+                <h3>💻 Tecnologia</h3>
+                <p>Uso inteligente de dados e automação para melhorar a eficiência na produção.</p>
+            </div>
+            <div class="card">
+                <h3>📚 Educação</h3>
+                <p>Disseminar o conhecimento
+
+                    
