@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agrinho 2026 - Conectando o Futuro</title>
     <style>
-        /* --- ESTILOS CSS (Cores Vivas e Design) --- */
+        /* --- ESTILOS VISUAIS --- */
         :root {
             --verde-lima: #39FF14;
             --verde-escuro: #004B23;
@@ -25,10 +25,9 @@
         body {
             background-color: var(--verde-escuro);
             color: var(--branco);
-            overflow-x: hidden;
         }
 
-        /* Seção Principal (Hero) */
+        /* Seção Principal */
         .hero {
             min-height: 100vh;
             background: linear-gradient(135deg, #004B23 0%, #38b000 100%);
@@ -37,90 +36,3 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 40px 20px;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            color: var(--amarelo-sol);
-            text-shadow: 3px 3px 0px var(--laranja-alerta);
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            animation: balanco 3s ease-in-out infinite alternate;
-        }
-
-        .hero p {
-            font-size: 1.5rem;
-            max-width: 700px;
-            margin-bottom: 40px;
-            line-height: 1.6;
-        }
-
-        /* Container do Quiz Interativo */
-        .quiz-container {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border: 4px solid var(--verde-lima);
-            border-radius: 20px;
-            padding: 30px;
-            max-width: 600px;
-            width: 100%;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-        }
-
-        .quiz-pergunta {
-            font-size: 1.4rem;
-            font-weight: bold;
-            margin-bottom: 20px;
-            color: var(--amarelo-sol);
-        }
-
-        .opcoes-container {
-            display: grid;
-            gap: 15px;
-        }
-
-        .btn-opcao {
-            background-color: var(--branco);
-            color: var(--verde-escuro);
-            border: none;
-            padding: 15px 20px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            text-align: left;
-        }
-
-        .btn-opcao:hover {
-            background-color: var(--amarelo-sol);
-            transform: scale(1.03);
-        }
-
-        /* Classes de Feedback do Quiz */
-        .correta {
-            background-color: var(--verde-lima) !important;
-            color: var(--verde-escuro) !important;
-        }
-
-        .errada {
-            background-color: var(--laranja-alerta) !important;
-            color: var(--branco) !important;
-        }
-
-        #mensagem-feedback {
-            margin-top: 20px;
-            font-size: 1.2rem;
-            font-weight: bold;
-            min-height: 30px;
-        }
-
-        /* Seção de Conteúdo */
-        .conteudo-projeto {
-            padding: 80px 20px;
-            background-color: var(--branco);
-            color: #333;
-            text-align: center;
-        }
