@@ -2,6 +2,7 @@
 :root {
     --verde-lima: #39FF14;
     --verde-escuro: #004B23;
+    --verde-grama: #1b4d3e;
     --amarelo-sol: #FFD60A;
     --laranja-alerta: #FF6B00;
     --branco: #FFFFFF;
@@ -9,7 +10,6 @@
     --texto-escuro: #333333;
 }
 
-/* Configuração Geral da Página */
 * {
     margin: 0;
     padding: 0;
@@ -18,22 +18,34 @@
 }
 
 body {
-    background-color: #ffffff; /* Fundo base branco para evitar tela verde vazia */
+    background-color: var(--branco);
     color: var(--texto-escuro);
     overflow-x: hidden;
 }
 
-/* Seção Principal (Onde fica o fundo verde oficial) */
+/* Seção Principal transformando-se em Cenário */
 .hero {
     min-height: 100vh;
-    background: linear-gradient(135deg, #004B23 0%, #38b000 100%);
+    background: linear-gradient(135deg, #207a44 0%, #004B23 100%);
     color: var(--branco);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 40px 20px;
+    padding: 60px 20px 120px 20px; /* Espaço inferior para o terreno */
+    position: relative;
+    overflow: hidden;
+}
+
+/* Camada para garantir que o texto fique acima das nuvens */
+.conteudo-hero {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .hero h1 {
@@ -52,16 +64,75 @@ body {
     line-height: 1.6;
 }
 
-/* Caixa do Quiz Interativo */
+/* --- DECORAÇÕES DO CENÁRIO --- */
+
+/* Nuvens Animadas */
+.nuvem {
+    position: absolute;
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 5rem;
+    user-select: none;
+    z-index: 1;
+}
+
+.nuvem-1 { top: 10%; animation: moverNuvem 25s linear infinite; }
+.nuvem-2 { top: 25%; animation: moverNuvem 35s linear infinite reverse; }
+.nuvem-3 { top: 15%; font-size: 3.5rem; animation: moverNuvem 20s linear infinite; animation-delay: 5s; }
+
+@keyframes moverNuvem {
+    0% { left: -15%; }
+    100% { left: 115%; }
+}
+
+/* Terreno Ondulado / Gramado */
+.terreno-gramado {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: #1a5c37;
+    border-top-left-radius: 50% 30px;
+    border-top-right-radius: 50% 30px;
+    z-index: 2;
+}
+
+/* Flores na Base */
+.decoracao-campo {
+    position: absolute;
+    bottom: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 0 10%;
+    font-size: 2.5rem;
+    z-index: 3;
+    pointer-events: none;
+}
+
+.flor {
+    animation: balançoFlor 4s ease-in-out infinite alternate;
+}
+
+.flor:nth-child(even) {
+    animation-delay: 1s;
+}
+
+@keyframes balançoFlor {
+    0% { transform: rotate(-5deg); }
+    100% { transform: rotate(5deg); }
+}
+
+/* --- ESTILOS DO QUIZ --- */
 .quiz-container {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(12px);
     border: 4px solid var(--verde-lima);
     border-radius: 20px;
     padding: 30px;
     max-width: 600px;
     width: 100%;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.4);
 }
 
 .quiz-pergunta {
@@ -96,7 +167,6 @@ body {
     transform: scale(1.02);
 }
 
-/* Classes que o JavaScript ativa nas respostas */
 .correta {
     background-color: var(--verde-lima) !important;
     color: var(--verde-escuro) !important;
@@ -114,18 +184,19 @@ body {
     min-height: 30px;
 }
 
-/* Seção Inferior de Conteúdo do Projeto */
+/* Seção Inferior */
 .conteudo-projeto {
     padding: 80px 20px;
     background-color: var(--branco);
-    color: var(--texto-escuro);
-    text-align: center;
+    position: relative;
+    z-index: 5;
 }
 
 .conteudo-projeto h2 {
     font-size: 2.5rem;
     color: var(--verde-escuro);
     margin-bottom: 20px;
+    text-align: center;
 }
 
 .subtitulo {
@@ -133,6 +204,7 @@ body {
     margin: 0 auto 40px auto;
     font-size: 1.2rem;
     color: #666;
+    text-align: center;
 }
 
 .cards-grid {
@@ -158,8 +230,8 @@ body {
     margin-bottom: 10px;
 }
 
-/* Responsividade para telas menores */
 @media (max-width: 768px) {
     .hero h1 { font-size: 2.5rem; }
     .hero p { font-size: 1.1rem; }
+    .nuvem { font-size: 3rem; }
 }
