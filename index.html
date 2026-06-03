@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agrinho 2026 - Conectando o Futuro</title>
     <style>
-        /* Cores Vibrantes e Estilo Geral */
+        /* --- ESTILOS CSS (Cores Vivas e Design) --- */
         :root {
             --verde-lima: #39FF14;
             --verde-escuro: #004B23;
             --amarelo-sol: #FFD60A;
             --laranja-alerta: #FF6B00;
             --branco: #FFFFFF;
-            --fundo-escondido: #121212;
+            --cinza-claro: #f4f4f4;
         }
 
         * {
@@ -28,7 +28,7 @@
             overflow-x: hidden;
         }
 
-        /* Hero Section com Degradê Forte */
+        /* Seção Principal (Hero) */
         .hero {
             min-height: 100vh;
             background: linear-gradient(135deg, #004B23 0%, #38b000 100%);
@@ -37,8 +37,7 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 20px;
-            position: relative;
+            padding: 40px 20px;
         }
 
         .hero h1 {
@@ -58,7 +57,7 @@
             line-height: 1.6;
         }
 
-        /* O Elemento de Destaque: O Quiz Interativo */
+        /* Container do Quiz Interativo */
         .quiz-container {
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
@@ -100,7 +99,7 @@
             transform: scale(1.03);
         }
 
-        /* Classes de feedback do quiz */
+        /* Classes de Feedback do Quiz */
         .correta {
             background-color: var(--verde-lima) !important;
             color: var(--verde-escuro) !important;
@@ -118,19 +117,10 @@
             min-height: 30px;
         }
 
-        /* Seção de Conteúdo do Projeto */
+        /* Seção de Conteúdo */
         .conteudo-projeto {
             padding: 80px 20px;
             background-color: var(--branco);
             color: #333;
             text-align: center;
         }
-
-        .conteudo-projeto h2 {
-            font-size: 2.5rem;
-            color: var(--verde-escuro);
-            margin-bottom: 30px;
-        }
-
-        .cards-grid {
-            display
