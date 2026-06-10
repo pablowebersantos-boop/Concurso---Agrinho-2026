@@ -10,14 +10,18 @@ body, html {
     height: 100%;
     font-family: 'Segoe UI', Roboto, sans-serif;
     overflow: hidden;
+    /* Se tudo falhar, o fundo do site será verde escuro para as letras brancas aparecerem */
+    background-color: #1b4332; 
 }
 
 /* Configuração do fundo realista */
 .cenario-realista {
     width: 100%;
     height: 100%;
-    /* Substitua a URL abaixo pela imagem do campo que você preferir */
-    background-image: url('https://share.google/zjweiv0zOwXlYXfCY');
+    
+    /* Novo link de imagem de campo realista de alta qualidade */
+    background-image: url('https://picsum.photos/id/1024/1920/1080');
+    
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -30,14 +34,14 @@ body, html {
 
 /* Caixa de texto moderna com efeito de vidro fosco (Glassmorphism) */
 .mensagem-box {
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(0, 0, 0, 0.4); /* Fundo escuro semitransparente para dar contraste */
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     padding: 30px 40px;
     border-radius: 15px;
     text-align: center;
-    color: #ffffff;
+    color: #ffffff; /* Letras brancas */
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
 }
 
