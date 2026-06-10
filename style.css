@@ -1,4 +1,4 @@
-/* Configuração básica da página */
+/* Reset básico para ocupar a tela inteira */
 * {
     margin: 0;
     padding: 0;
@@ -8,71 +8,47 @@
 body, html {
     width: 100%;
     height: 100%;
+    font-family: 'Segoe UI', Roboto, sans-serif;
     overflow: hidden;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* O Céu */
-.cenario {
-    position: relative;
+/* Configuração do fundo realista */
+.cenario-realista {
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom, #87CEEB, #E0F6FF);
+    /* Substitua a URL abaixo pela imagem do campo que você preferir */
+    background-image: url('https://share.google/zjweiv0zOwXlYXfCY');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    /* Centraliza a caixa de texto na tela */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/* O Sol */
-.sol {
-    position: absolute;
-    top: 50px;
-    right: 80px;
-    width: 80px;
-    height: 80px;
-    background-color: #FFD700;
-    border-radius: 50%;
-    box-shadow: 0 0 30px #FFA500;
-}
-
-/* Uma Nuvem Simples */
-.nuvem {
-    position: absolute;
-    top: 80px;
-    left: 10%;
-    width: 150px;
-    height: 50px;
-    background: #ffffff;
-    border-radius: 50px;
-    opacity: 0.9;
-}
-
-/* Colina de trás (verde escuro) */
-.colina-traseira {
-    position: absolute;
-    bottom: 0;
-    left: -10%;
-    width: 70%;
-    height: 45%;
-    background-color: #228B22;
-    border-radius: 100% 100% 0 0;
-}
-
-/* Colina da frente (verde mais claro) */
-.colina-frente {
-    position: absolute;
-    bottom: 0;
-    right: -10%;
-    width: 70%;
-    height: 35%;
-    background-color: #32CD32;
-    border-radius: 100% 100% 0 0;
-}
-
-/* Texto na tela */
-.mensagem {
-    position: absolute;
-    top: 20%;
-    width: 100%;
+/* Caixa de texto moderna com efeito de vidro fosco (Glassmorphism) */
+.mensagem-box {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 30px 40px;
+    border-radius: 15px;
     text-align: center;
-    color: #333;
-    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
-    z-index: 10;
+    color: #ffffff;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+
+.mensagem-box h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.mensagem-box p {
+    font-size: 1.2rem;
+    font-weight: 300;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
 }
