@@ -1,237 +1,78 @@
-/* Definição de Cores Vibrantes */
-:root {
-    --verde-lima: #39FF14;
-    --verde-escuro: #004B23;
-    --verde-grama: #1b4d3e;
-    --amarelo-sol: #FFD60A;
-    --laranja-alerta: #FF6B00;
-    --branco: #FFFFFF;
-    --cinza-claro: #f4f4f4;
-    --texto-escuro: #333333;
-}
-
+/* Configuração básica da página */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-body {
-    background-color: var(--branco);
-    color: var(--texto-escuro);
-    overflow-x: hidden;
-}
-
-/* Seção Principal transformando-se em Cenário */
-.hero {
-    min-height: 100vh;
-    background: linear-gradient(135deg, #207a44 0%, #004B23 100%);
-    color: var(--branco);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 60px 20px 120px 20px; /* Espaço inferior para o terreno */
+/* O Céu */
+.cenario {
     position: relative;
-    overflow: hidden;
-}
-
-/* Camada para garantir que o texto fique acima das nuvens */
-.conteudo-hero {
-    position: relative;
-    z-index: 10;
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    height: 100%;
+    background: linear-gradient(to bottom, #87CEEB, #E0F6FF);
 }
 
-.hero h1 {
-    font-size: 3.5rem;
-    color: var(--amarelo-sol);
-    text-shadow: 3px 3px 0px var(--laranja-alerta);
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+/* O Sol */
+.sol {
+    position: absolute;
+    top: 50px;
+    right: 80px;
+    width: 80px;
+    height: 80px;
+    background-color: #FFD700;
+    border-radius: 50%;
+    box-shadow: 0 0 30px #FFA500;
 }
 
-.hero p {
-    font-size: 1.5rem;
-    max-width: 700px;
-    margin-bottom: 40px;
-    line-height: 1.6;
-}
-
-/* --- DECORAÇÕES DO CENÁRIO --- */
-
-/* Nuvens Animadas */
+/* Uma Nuvem Simples */
 .nuvem {
     position: absolute;
-    color: rgba(255, 255, 255, 0.4);
-    font-size: 5rem;
-    user-select: none;
-    z-index: 1;
+    top: 80px;
+    left: 10%;
+    width: 150px;
+    height: 50px;
+    background: #ffffff;
+    border-radius: 50px;
+    opacity: 0.9;
 }
 
-.nuvem-1 { top: 10%; animation: moverNuvem 25s linear infinite; }
-.nuvem-2 { top: 25%; animation: moverNuvem 35s linear infinite reverse; }
-.nuvem-3 { top: 15%; font-size: 3.5rem; animation: moverNuvem 20s linear infinite; animation-delay: 5s; }
-
-@keyframes moverNuvem {
-    0% { left: -15%; }
-    100% { left: 115%; }
-}
-
-/* Terreno Ondulado / Gramado */
-.terreno-gramado {
+/* Colina de trás (verde escuro) */
+.colina-traseira {
     position: absolute;
     bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 80px;
-    background: #1a5c37;
-    border-top-left-radius: 50% 30px;
-    border-top-right-radius: 50% 30px;
-    z-index: 2;
+    left: -10%;
+    width: 70%;
+    height: 45%;
+    background-color: #228B22;
+    border-radius: 100% 100% 0 0;
 }
 
-/* Flores na Base */
-.decoracao-campo {
+/* Colina da frente (verde mais claro) */
+.colina-frente {
     position: absolute;
-    bottom: 50px;
+    bottom: 0;
+    right: -10%;
+    width: 70%;
+    height: 35%;
+    background-color: #32CD32;
+    border-radius: 100% 100% 0 0;
+}
+
+/* Texto na tela */
+.mensagem {
+    position: absolute;
+    top: 20%;
     width: 100%;
-    display: flex;
-    justify-content: space-around;
-    padding: 0 10%;
-    font-size: 2.5rem;
-    z-index: 3;
-    pointer-events: none;
-}
-
-.flor {
-    animation: balançoFlor 4s ease-in-out infinite alternate;
-}
-
-.flor:nth-child(even) {
-    animation-delay: 1s;
-}
-
-@keyframes balançoFlor {
-    0% { transform: rotate(-5deg); }
-    100% { transform: rotate(5deg); }
-}
-
-/* --- ESTILOS DO QUIZ --- */
-.quiz-container {
-    background: rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(12px);
-    border: 4px solid var(--verde-lima);
-    border-radius: 20px;
-    padding: 30px;
-    max-width: 600px;
-    width: 100%;
-    box-shadow: 0 12px 40px rgba(0,0,0,0.4);
-}
-
-.quiz-pergunta {
-    font-size: 1.4rem;
-    font-weight: bold;
-    margin-bottom: 20px;
-    color: var(--amarelo-sol);
-}
-
-.opcoes-container {
-    display: grid;
-    gap: 15px;
-}
-
-.btn-opcao {
-    background-color: var(--branco);
-    color: var(--verde-escuro);
-    border: none;
-    padding: 15px 20px;
-    font-size: 1.1rem;
-    font-weight: bold;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    text-align: left;
-    width: 100%;
-}
-
-.btn-opcao:hover {
-    background-color: var(--amarelo-sol);
-    color: var(--verde-escuro);
-    transform: scale(1.02);
-}
-
-.correta {
-    background-color: var(--verde-lima) !important;
-    color: var(--verde-escuro) !important;
-}
-
-.errada {
-    background-color: var(--laranja-alerta) !important;
-    color: var(--branco) !important;
-}
-
-#mensagem-feedback {
-    margin-top: 20px;
-    font-size: 1.2rem;
-    font-weight: bold;
-    min-height: 30px;
-}
-
-/* Seção Inferior */
-.conteudo-projeto {
-    padding: 80px 20px;
-    background-color: var(--branco);
-    position: relative;
-    z-index: 5;
-}
-
-.conteudo-projeto h2 {
-    font-size: 2.5rem;
-    color: var(--verde-escuro);
-    margin-bottom: 20px;
     text-align: center;
-}
-
-.subtitulo {
-    max-width: 800px;
-    margin: 0 auto 40px auto;
-    font-size: 1.2rem;
-    color: #666;
-    text-align: center;
-}
-
-.cards-grid {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
-    margin-top: 40px;
-}
-
-.card {
-    background: var(--cinza-claro);
-    border-left: 5px solid var(--laranja-alerta);
-    padding: 25px;
-    border-radius: 8px;
-    width: 300px;
-    text-align: left;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-}
-
-.card h3 {
-    color: var(--verde-escuro);
-    margin-bottom: 10px;
-}
-
-@media (max-width: 768px) {
-    .hero h1 { font-size: 2.5rem; }
-    .hero p { font-size: 1.1rem; }
-    .nuvem { font-size: 3rem; }
+    color: #333;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+    z-index: 10;
 }
