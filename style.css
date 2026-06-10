@@ -21,16 +21,17 @@
         }
 
         .cenario-realista {
-            width: 100%;
-            height: 100%;
-            /* Trocado o ID 1024 (ave) pelo ID 1041 (campo/colinas) */
-            background-image: url('https://picsum.photos/id/1041/1920/1080?v=1');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+    width: 100%;
+    height: 100%;
+    /* Nova URL focada em termos de busca de paisagem */
+    background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1920&q=80');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
         }
 
         .mensagem-box {
