@@ -4,19 +4,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Minha Paisagem de Campo Realista</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        /* O CSS FOI COLOCADO DIRETAMENTE AQUI DENTRO */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            width: 100%;
+            height: 100%;
+            font-family: 'Segoe UI', Roboto, sans-serif;
+            overflow: hidden;
+            background-color: #1b4332; /* Fundo verde escuro de segurança */
+        }
+
+        .cenario-realista {
+            width: 100%;
+            height: 100%;
+            background-image: url('https://picsum.photos/id/1024/1920/1080');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .mensagem-box {
+            background: rgba(0, 0, 0, 0.5); 
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 30px 40px;
+            border-radius: 15px;
+            text-align: center;
+            color: #ffffff;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+        }
+
+        .mensagem-box h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+        }
+
+        .mensagem-box p {
+            font-size: 1.2rem;
+            font-weight: 300;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+        }
+    </style>
 </head>
 <body>
 
     <div class="cenario-realista">
-        
         <div class="mensagem-box">
             <h1>Bem-vindo ao meu campo virtual!</h1>
             <p>Uma paisagem realista feita com HTML e CSS no GitHub.</p>
         </div>
-
     </div>
 
-    <script src="script.js"></script>
 </body>
 </html>
