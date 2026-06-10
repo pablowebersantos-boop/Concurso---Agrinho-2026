@@ -32,3 +32,244 @@
             background-position: center;
             background-repeat: no-repeat;
             display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        /* PAINEL DE CONTROLES NO TOPO DIREITO */
+        .painel-controles {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+            z-index: 10;
+        }
+
+        .btn-site {
+            background: #007bff; 
+            color: #ffffff;
+            border: 2px solid #ffffff;
+            padding: 12px 18px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+            transition: transform 0.1s, background 0.2s;
+        }
+
+        .btn-site:hover {
+            background: #0056b3;
+            transform: scale(1.05);
+        }
+
+        .btn-site:active {
+            transform: scale(0.95);
+        }
+
+        /* CAIXA DE MENSAGEM PRINCIPAL */
+        .mensagem-box {
+            background: rgba(0, 0, 0, 0.6); 
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 2rem 2.5rem;
+            border-radius: 15px;
+            text-align: center;
+            color: #ffffff;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+            max-width: 90%;
+        }
+
+        .mensagem-box h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.8rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+        }
+
+        .mensagem-box p {
+            font-size: 1.2rem;
+            font-weight: 300;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+        }
+
+        /* JANELA DO QUIZZ (MODAL) */
+        .modal-quiz {
+            display: none; /* Escondido por padrão */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 20;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .quiz-box {
+            background: #ffffff;
+            color: #333333;
+            width: 500px;
+            max-width: 90%;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            position: relative;
+        }
+
+        .quiz-box h2 {
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            color: #1b4332;
+        }
+
+        .opcao-btn {
+            display: block;
+            width: 100%;
+            background: #f0f2f5;
+            border: 1px solid #ccc;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 8px;
+            text-align: left;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .opcao-btn:hover {
+            background: #e2e6ea;
+        }
+
+        .btn-fechar {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #999;
+        }
+
+        .btn-fechar:hover {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="cenario-realista">
+        
+        <div class="painel-controles">
+            <button class="btn-site" onclick="abrirQuiz()">🌱 Responder Quiz</button>
+            <button class="btn-site" onclick="alterarFonte(1)" title="Aumentar Letra">A+</button>
+            <button class="btn-site" onclick="alterarFonte(-1)" title="Diminuir Letra">A-</button>
+            <button class="btn-site" onclick="resetarFonte()" title="Tamanho Padrão">Resetar</button>
+        </div>
+
+        <div class="mensagem-box">
+            <h1>Bem-vindo ao meu campo virtual!</h1>
+            <p>Uma paisagem realista feita com HTML e CSS no GitHub.</p>
+        </div>
+    </div>
+
+    <div id="modalQuiz" class="modal-quiz">
+        <div class="quiz-box">
+            <button class="btn-fechar" onclick="fecharQuiz()">&times;</button>
+            <div id="conteudo-quiz">
+                </div>
+        </div>
+    </div>
+
+    <script>
+        // --- CÓDIGO DE ACESSIBILIDADE ---
+        let tamanhoAtual = 16; 
+
+        function alterarFonte(direcao) {
+            if (direcao === 1 && tamanhoAtual < 26) {
+                tamanhoAtual += 2;
+            } else if (direcao === -1 && tamanhoAtual > 12) {
+                tamanhoAtual -= 2;
+            }
+            document.documentElement.style.fontSize = tamanhoAtual + 'px';
+        }
+
+        function resetarFonte() {
+            tamanhoAtual = 16;
+            document.documentElement.style.fontSize = '16px';
+        }
+
+        // --- CÓDIGO DO QUIZ DE SUSTENTABILIDADE ---
+        const perguntas = [
+            {
+                pergunta: "Qual das opções abaixo é um recurso renovável?",
+                opcoes: ["Petróleo", "Energia Solar", "Carvão Mineral", "Gás Natural"],
+                correta: 1
+            },
+            {
+                pergunta: "Quanto tempo, em média, o plástico leva para se decompor na natureza?",
+                opcoes: ["Até 50 anos", "Cerca de 100 anos", "Mais de 400 anos", "Não se decompõe"],
+                correta: 2
+            },
+            {
+                pergunta: "Qual dos '3 Rs' da sustentabilidade foca em diminuir a geração de lixo?",
+                opcoes: ["Reciclar", "Reutilizar", "Reduzir", "Recuperar"],
+                correta: 2
+            }
+        ];
+
+        let perguntaAtual = 0;
+        let pontuacao = 0;
+
+        function abrirQuiz() {
+            document.getElementById("modalQuiz").style.display = "flex";
+            perguntaAtual = 0;
+            pontuacao = 0;
+            mostrarPergunta();
+        }
+
+        function fecharQuiz() {
+            document.getElementById("modalQuiz").style.display = "none";
+        }
+
+        function mostrarPergunta() {
+            const container = document.getElementById("conteudo-quiz");
+            
+            if (perguntaAtual < perguntas.length) {
+                let p = perguntas[perguntaAtual];
+                let html = `<h2>Pergunta ${perguntaAtual + 1} de ${perguntas.length}</h2>`;
+                html += `<p style="margin-bottom:15px; font-weight:bold;">${p.pergunta}</p>`;
+                
+                p.opcoes.forEach((opcao, index) => {
+                    html += `<button class="opcao-btn" onclick="verificarResposta(${index})">${opcao}</button>`;
+                });
+                
+                container.innerHTML = html;
+            } else {
+                // Fim do quiz, mostra o resultado
+                container.innerHTML = `
+                    <h2>Quiz Concluído! 🌱</h2>
+                    <p style="margin: 20px 0; font-size: 1.2rem;">Você acertou <strong>${pontuacao}</strong> de <strong>${perguntas.length}</strong> perguntas.</p>
+                    <button class="btn-site" style="width:100%;" onclick="abrirQuiz()">Tentar Novamente</button>
+                `;
+            }
+        }
+
+        function verificarResposta(opcaoSelecionada) {
+            if (opcaoSelecionada === perguntas[perguntaAtual].correta) {
+                pontuacao++;
+                alert("Resposta Correta! 🎉");
+            } else {
+                alert("Resposta Errada! 😢");
+            }
+            perguntaAtual++;
+            mostrarPergunta();
+        }
+    </script>
+
+</body>
+</html>
