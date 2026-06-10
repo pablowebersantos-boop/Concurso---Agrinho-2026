@@ -29,7 +29,8 @@
         .cenario-realista {
             width: 100%;
             height: 100%;
-            background-image: url('https://picsum.photos/id/1041/1920/1080?v=1');
+            /* LINK ATUALIZADO: Agora com uma imagem real de um campo verde */
+            background-image: url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -50,91 +51,17 @@
         }
 
         .btn-acessibilidade {
-            background: rgba(255, 255, 255, 0.85);
-            color: #333;
-            border: 1px solid rgba(0, 0, 0, 0.2);
-            padding: 10px 15px;
-            font-size: 1rem;
+            background: #007bff; /* Cor azul bem visível para você encontrar fácil */
+            color: #ffffff;
+            border: 2px solid #ffffff;
+            padding: 12px 18px;
+            font-size: 1.1rem;
             font-weight: bold;
             border-radius: 8px;
             cursor: pointer;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
             transition: transform 0.1s, background 0.2s;
         }
 
         .btn-acessibilidade:hover {
-            background: #ffffff;
-            transform: scale(1.05);
-        }
-
-        .btn-acessibilidade:active {
-            transform: scale(0.95);
-        }
-
-        /* CAIXA DE MENSAGEM (Usando 'rem' para responder ao tamanho da fonte) */
-        .mensagem-box {
-            background: rgba(0, 0, 0, 0.5); 
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            padding: 2rem 2.5rem;
-            border-radius: 15px;
-            text-align: center;
-            color: #ffffff;
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
-            max-width: 90%;
-        }
-
-        .mensagem-box h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.8rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
-        }
-
-        .mensagem-box p {
-            font-size: 1.2rem;
-            font-weight: 300;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
-        }
-    </style>
-</head>
-<body>
-
-    <div class="cenario-realista">
-        
-        <div class="painel-acessibilidade">
-            <button class="btn-acessibilidade" onclick="alterarFonte(1)" title="Aumentar Letra">A+</button>
-            <button class="btn-acessibilidade" onclick="alterarFonte(-1)" title="Diminuir Letra">A-</button>
-            <button class="btn-acessibilidade" onclick="resetarFonte()" title="Tamanho Padrão">Resetar</button>
-        </div>
-
-        <div class="mensagem-box">
-            <h1>Bem-vindo ao meu campo virtual!</h1>
-            <p>Uma paisagem realista feita com HTML e CSS no GitHub.</p>
-        </div>
-    </div>
-
-    <script>
-        // Tamanho inicial padrão em pixels
-        let tamanhoAtual = 16; 
-
-        function alterarFonte(direcao) {
-            // Limites para não ficar pequeno ou grande demais
-            if (direcao === 1 && tamanhoAtual < 26) {
-                tamanhoAtual += 2;
-            } else if (direcao === -1 && tamanhoAtual > 12) {
-                tamanhoAtual -= 2;
-            }
-            
-            // Aplica o novo tamanho direto na raiz do site (html)
-            document.documentElement.style.fontSize = tamanhoAtual + 'px';
-        }
-
-        function resetarFonte() {
-            tamanhoAtual = 16;
-            document.documentElement.style.fontSize = '16px';
-        }
-    </script>
-
-</body>
-</html>
+            background: #
