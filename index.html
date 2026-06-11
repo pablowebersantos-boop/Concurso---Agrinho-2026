@@ -3,85 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minha Paisagem de Campo Realista</title>
+    <title>Agro Sustentável</title>
     <style>
-        * {
+        /* Remove as margens padrão do navegador */
+        body, html {
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            font-size: 16px; 
-            transition: font-size 0.2s ease;
-        }
-
-        body, html {
-            width: 100%;
             height: 100%;
-            font-family: 'Segoe UI', Roboto, sans-serif;
-            overflow: hidden;
-            background-color: #1b4332;
+            font-family: 'Arial', sans-serif;
         }
 
-        .cenario-realista {
-            width: 100%;
-            height: 100%;
-            background-image: url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1920&q=80');
+        /* Configuração do container da imagem de fundo */
+        .bg-banner {
+            /* Substitua o link abaixo pela URL da imagem da sua lavoura */
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1500937386664-56d1dfef3854?q=80&w=2070');
+            
+            /* Garante que a imagem cubra toda a tela e fique centralizada */
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
+            height: 100vh;
+            
+            /* Flexbox para centralizar o texto perfeitamente no meio */
             display: flex;
             justify-content: center;
             align-items: center;
-            position: relative;
         }
 
-        /* PAINEL DE CONTROLES NO TOPO DIREITO */
-        .painel-controles {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            display: flex;
-            gap: 10px;
-            z-index: 10;
-        }
-
-        .btn-site {
-            background: #007bff; 
-            color: #ffffff;
-            border: 2px solid #ffffff;
-            padding: 12px 18px;
-            font-size: 1.1rem;
+        /* Estilização do texto */
+        .texto-central {
+            color: white;
+            font-size: 3.5rem;
             font-weight: bold;
-            border-radius: 8px;
-            cursor: pointer;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-            transition: transform 0.1s, background 0.2s;
-        }
-
-        .btn-site:hover {
-            background: #0056b3;
-            transform: scale(1.05);
-        }
-
-        .btn-site:active {
-            transform: scale(0.95);
-        }
-
-        /* CAIXA DE MENSAGEM PRINCIPAL */
-        .mensagem-box {
-            background: rgba(0, 0, 0, 0.6); 
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            padding: 2rem 2.5rem;
-            border-radius: 15px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
             text-align: center;
-            color: #ffffff;
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
-            max-width: 90%;
+            padding: 0 20px;
         }
+    </style>
+</head>
+<body>
 
-        .mensagem-box h1 {
-            font-
+    <div class="bg-banner">
+        <h1 class="texto-central">O Futuro Sustentável</h1>
+    </div>
+
+</body>
+</html>
