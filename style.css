@@ -3,8 +3,40 @@ body, html {
     margin: 0;
     padding: 0;
     font-family: 'Arial', sans-serif;
-    background-color: #f4f6f4; /* Fundo levemente cinza/esverdeado para o site */
+    background-color: #f4f6f4;
     color: #333;
+    transition: font-size 0.2s ease; /* Transição suave ao mudar o tamanho da fonte */
+}
+
+/* Menu de Acessibilidade Fixo no Canto Superior Direito */
+.menu-acessibilidade {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000; /* Fica acima de tudo */
+    display: flex;
+    gap: 8px;
+    background-color: rgba(255, 255, 255, 0.2); /* Fundo semi-transparente discreto */
+    padding: 6px;
+    border-radius: 20px;
+    backdrop-filter: blur(5px); /* Efeito de vidro borrado */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.menu-acessibilidade button {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.menu-acessibilidade button:hover {
+    background-color: #2e7d32; /* Muda para o verde agro ao passar o mouse */
 }
 
 /* Banner Principal */
@@ -40,23 +72,20 @@ body, html {
 .titulo-secao {
     text-align: center;
     font-size: 2.2rem;
-    color: #2e7d32; /* Verde Agro */
+    color: #2e7d32;
     margin-bottom: 40px;
 }
 
-/* Organização dos 3 Quadrados */
 .grid-noticias {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 300px; /* Espaço entre os quadrados */
     gap: 30px;
 }
 
-/* Estilo de cada Quadrado (Card) */
 .card-noticia {
     background-color: white;
     border-radius: 8px;
-    text-decoration: none; /* Remove o sublinhado de link */
+    text-decoration: none;
     color: #333;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -64,7 +93,6 @@ body, html {
     flex-direction: column;
 }
 
-/* Efeito ao passar o mouse */
 .card-noticia:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 25px rgba(46, 125, 50, 0.2);
