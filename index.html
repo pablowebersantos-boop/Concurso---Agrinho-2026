@@ -8,20 +8,26 @@
 </head>
 <body>
 
+    <div class="menu-acessibilidade">
+        <button onclick="mudarFonte(1)" title="Aumentar Letra">A+</button>
+        <button onclick="mudarFonte(-1)" title="Diminuir Letra">A-</button>
+        <button onclick="mudarIdioma()" id="btn-idioma" title="Mudar Idioma">PT / EN</button>
+    </div>
+
     <div class="bg-banner">
-        <h1 class="texto-central">O Futuro Sustentável</h1>
+        <h1 class="texto-central" id="titulo-principal">O Futuro Sustentável</h1>
     </div>
 
     <main class="container-noticias">
-        <h2 class="titulo-secao">Notícias do Campo</h2>
+        <h2 class="titulo-secao" id="titulo-noticias">Notícias do Campo</h2>
         
         <div class="grid-noticias">
             
             <a href="https://g1.globo.com/economia/agronegocios/" target="_blank" class="card-noticia">
                 <div class="conteudo-card">
                     <span class="tag-agro">Tecnologia</span>
-                    <h3>Inovações no Agro em 2026</h3>
-                    <p>Descubra como os novos drones e sensores inteligentes estão ajudando a economizar água e defensivos agrícolas nas plantações.</p>
+                    <h3 class="txt-n1-titulo">Inovações no Agro em 2026</h3>
+                    <p class="txt-n1-desc">Descubra como os novos drones e sensores inteligentes estão ajudando a economizar água e defensivos agrícolas nas plantações.</p>
                     <span class="leia-mais">Leia mais →</span>
                 </div>
             </a>
@@ -29,8 +35,8 @@
             <a href="https://g1.globo.com/economia/agronegocios/" target="_blank" class="card-noticia">
                 <div class="conteudo-card">
                     <span class="tag-agro">Sustentabilidade</span>
-                    <h3>O Poder da Rotação de Culturas</h3>
-                    <p>Entenda como alternar as plantas no campo melhora os nutrientes do solo de forma natural e evita o desgaste da terra.</p>
+                    <h3 class="txt-n2-titulo">O Poder da Rotação de Culturas</h3>
+                    <p class="txt-n2-desc">Entenda como alternar as plantas no campo melhora os nutrientes do solo de forma natural e evita o desgaste da terra.</p>
                     <span class="leia-mais">Leia mais →</span>
                 </div>
             </a>
@@ -38,4 +44,15 @@
             <a href="https://g1.globo.com/economia/agronegocios/" target="_blank" class="card-noticia">
                 <div class="conteudo-card">
                     <span class="tag-agro">Preservação</span>
-                    <h3>Práticas de
+                    <h3 class="txt-n3-titulo">Práticas de Manejo Sustentável</h3>
+                    <p class="txt-n3-desc">Pequenos e grandes produtores rurais compartilham suas técnicas para produzir alimentos protegendo as fontes de água locais.</p>
+                    <span class="leia-mais">Leia mais →</span>
+                </div>
+            </a>
+
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
