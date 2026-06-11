@@ -1,17 +1,32 @@
-.btn-acessibilidade {
-    background: #007bff; /* Cor azul bem visível */
-    color: #ffffff; /* Letras brancas */
-    border: 2px solid #ffffff;
-    padding: 12px 18px;
-    font-size: 1.1rem;
-    font-weight: bold;
-    border-radius: 8px;
-    cursor: pointer;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-    transition: transform 0.1s, background 0.2s;
+/* Remove as margens padrão do navegador */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Arial', sans-serif;
 }
 
-.btn-acessibilidade:hover {
-    background: #0056b3;
-    transform: scale(1.05);
+/* Configuração do container da imagem de fundo */
+.bg-banner {
+    /* Substitua pela URL ou caminho da sua imagem */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1500937386664-56d1dfef3854?q=80&w=2070');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    
+    /* Centraliza o texto */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilização do texto */
+.texto-central {
+    color: white;
+    font-size: 3.5rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    text-align: center;
+    padding: 0 20px;
 }
