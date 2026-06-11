@@ -1,9 +1,12 @@
+/* IMPORTANDO UMA FONTE MAIS BONITA DO GOOGLE FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Open+Sans:wght@400;600&display=swap');
+
 /* Configurações Gerais */
 body, html {
     margin: 0;
     padding: 0;
-    font-size: 100%; /* Base para o JavaScript controlar */
-    font-family: 'Arial', sans-serif;
+    font-size: 100%; 
+    font-family: 'Open Sans', sans-serif; /* Fonte secundária para os textos menores */
     background-color: #f4f6f4;
     color: #333;
     transition: font-size 0.2s ease;
@@ -42,7 +45,8 @@ body, html {
 
 /* Banner Principal */
 .bg-banner {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('campo.jpg');
+    /* Deixei o fundo um pouquinho mais escuro (0.5) para a nova cor do texto se destacar mais */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('campo.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -53,11 +57,20 @@ body, html {
     align-items: center;
 }
 
+/* TEXTO CENTRAL REESTILIZADO */
 .texto-central {
-    color: white;
-    font-size: 3.5em; /* Mudado para em para aceitar o zoom */
-    font-weight: bold;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    font-family: 'Montserrat', sans-serif; /* Aplicando a fonte elegante e moderna */
+    font-weight: 900; /* Deixa a letra bem marcante/grossa */
+    font-size: 4em; /* Aumentei um pouquinho o tamanho para dar impacto */
+    text-transform: uppercase; /* Deixa o texto em letras maiúsculas automaticamente */
+    letter-spacing: 2px; /* Dá um espaço elegante entre as letras */
+    
+    /* ALTERAÇÃO DE COR: Um tom verde-lima claro e ecológico que destaca muito no fundo escuro */
+    color: #ccff90; 
+    
+    /* Sombra projetada para dar efeito de profundidade */
+    text-shadow: 4px 4px 15px rgba(0, 0, 0, 0.9);
+    
     text-align: center;
     padding: 0 20px;
     margin: 0;
@@ -71,8 +84,10 @@ body, html {
 }
 
 .titulo-secao {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
     text-align: center;
-    font-size: 2.2em; /* Mudado para em */
+    font-size: 2.2em;
     color: #2e7d32;
     margin-bottom: 40px;
 }
@@ -121,14 +136,16 @@ body, html {
 }
 
 .conteudo-card h3 {
-    font-size: 1.4em; /* Mudado para em */
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1.4em;
     margin: 15px 0 10px 0;
     color: #1b5e20;
 }
 
 .conteudo-card p {
-    font-size: 0.95em; /* Mudado para em */
-    line-height: 1.5;
+    font-size: 0.95em;
+    line-height: 1.6;
     color: #666;
     margin-bottom: 20px;
 }
